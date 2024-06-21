@@ -146,24 +146,6 @@ nav{
     transform: scale(1.05); /* Slightly enlarge text on hover */
 }
 
-.btn {
-    background-color: #512e18;
-    color: #fff;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 25px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #713004;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    transform: translateY(-3px);
-}
-
-
 /* sections */
 
 .section{
