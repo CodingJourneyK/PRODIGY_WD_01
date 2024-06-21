@@ -1,0 +1,245 @@
+body{
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #126759;
+    background: linear-gradient(to right, #f0e4d7, #f5efe6);
+}
+
+header{
+    /*background-color: #6f4e37;*/
+    background-color: rgba(181, 153, 14, 0.614); /* Semi-transparent background for elegance */
+    padding: 10px 5px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(23, 48, 22, 0.1); /* soft shadow for header */
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.logo img{
+    height: 6rem;
+}
+
+.navlinks{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.navlinks li{
+    margin: 0 15px;
+    position: relative;
+}
+
+.navlinks a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.navlinks a:hover{
+    color: #f1ebe9;
+}
+
+.navlinks a::before, .navlinks a::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    background-color: #df562c;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.navlinks a:hover::before, .navlinks a:hover::after{
+    visibility: visible;
+    width: 100%;
+}
+
+
+/* Hero section */
+
+.hero{
+    background-color: bisque;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(239, 79, 11);
+    padding-top: 60px; /* offset for fixed header */
+    transition: all 0.3s ease-in-out; /* smooth transition for hover effect */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(219, 186, 67, 0.637); /* Dark overlay for elegance */ 
+    z-index: 1;
+    transition: all 0.3s ease-in-out; /* smooth transition for hover effect */
+}
+
+.hero:hover::before {
+    background: rgba(228, 228, 5, 0.316); /* Lighter overlay on hover */
+}
+
+.hero .image {
+    flex: 1 1 10rem;
+    z-index: 2;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.hero .image img{
+    width: 50%;
+    border-radius: 10px;
+}
+
+.hero:hover .image img {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+.hero-content {
+    z-index: 2;
+    position: relative;
+    transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+.hero-content h1{
+    font-size: 3em;
+    margin: 0;
+    color: #5e5503; /* White color for contrast */
+    transition: transform 0.3s ease-in-out; 
+}
+
+
+.hero-content p{
+    font-size: 1.2em;
+    color: #526107; /* Light color for elegance */
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero-content a{
+    font-size: 2rem;
+}
+
+.hero:hover .hero-content h1,
+.hero:hover .hero-content p {
+    transform: scale(1.05); /* Slightly enlarge text on hover */
+}
+
+.btn {
+    background-color: #512e18;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #713004;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+
+/* sections */
+
+.section{
+    padding: 60px 20px;
+    text-align: center;
+    background-color: bisque;
+    margin: 20px 0; /* Add space between sections */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-items{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-item{
+    margin: 20px;
+    flex: 1 1 300px;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+.menu-item:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+}
+.menu-item img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.menu-item h3{
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px){
+    .hero-content h1{
+        font-size: 2em;
+    }
+
+    .hero-content p{
+        font-size: 1em;
+    }
+
+    .navlinks{
+        flex-direction: column;
+        display: none;
+    }
+
+    .navlinks.active{
+        display: flex;
+    }
+    .menu-items{
+        flex-direction: column;
+    }
+}
+
+/* menu toggle for mobile screen */
+.menu-toggle{
+    display: none;
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle{
+        display: block;
+    }
+}
